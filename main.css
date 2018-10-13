@@ -21,31 +21,34 @@
     transition: all 0.5s;
     cursor: zoom-out;
 }
-.close_btn{
+
+#slider_wrapper{
+    display: none;
+    z-index: 100;
+    position: relative;
+}
+.next_btn{
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 2%;
+    top: 50vh;
+}
+.prev_btn{
+    position: absolute;
+    left: 2%;
+    top: 50vh;
+}
+.prev_btn img{
+    transform: rotate(180deg)
+}
+#slider_wrapper button{
+    background: #bdbdbd;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px black;
+    outline: none;
     cursor: pointer;
 }
-#slide_btn_next{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    font-weight: bold;
-    font-size: 24px;
-    background: white;
-    padding: 1px 10px 5px 10px;
-    border: 1px solid black;
-    cursor: pointer;
-}
-#slide_btn_prev{
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    font-weight: bold;
-    font-size: 24px;
-    background: white;
-    padding: 1px 10px 5px 10px;
-    border: 1px solid black;
-    cursor: pointer;
+#slider_wrapper button:hover{
+    background: #000;
 }
