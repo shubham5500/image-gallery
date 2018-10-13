@@ -1,0 +1,29 @@
+.image_wrapper{
+    margin: 10px;
+    cursor: zoom-in;
+    box-shadow: 0px 0px 10px #c7c7c7;
+    border-radius: 4px;
+    padding: 5px
+}
+.image_wrapper .main_image{
+    width: 100%;
+    height: 100%;
+}
+.fullscreen{
+    position: fixed;
+    height: 97vh;
+    z-index: 10;
+    width: 98vw;
+    margin-left: auto;
+    margin-right: auto;
+    left: 1vw;
+    top: 0;
+    transition: all 0.5s;
+    cursor: zoom-out;
+}
+.close_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
