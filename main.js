@@ -18,6 +18,7 @@ for (let i = 0; i < imagesArray.length; i++) {
     });
 }
 
+    
 
 function toggleImage(dataArray, cElement, type){
     let btn = document.querySelector('.close_btn');
@@ -35,6 +36,38 @@ function toggleImage(dataArray, cElement, type){
     }
 }
 
-function slide(element){
 
+var next = document.getElementById('next');
+next.addEventListener('click', function(){
+    slider('next');
+});
+
+var prev = document.getElementById('prev');
+prev.addEventListener('click', function(){
+    slider('prev');
+})
+
+
+function slider(data){
+    let getFullScreenElement = document.querySelector('.fullscreen');
+    let fullscreenIndex;
+    imagesWrapperArray.map((element, index)=>{
+        if(element == getFullScreenElement){
+            fullscreenIndex = index;
+        }
+    });    
+    imagesWrapperArray[fullscreenIndex].classList.remove('fullscreen');
+    imagesWrapperArray[fullscreenIndex].style.display = 'none';
+    data === 'next' ?  addRemove('next', fullscreenIndex) :  addRemove('prev', fullscreenIndex);
+}
+
+function addRemove(data, fullscreenIndex){
+    let flag = data === 'next' ? 1 : -1;
+    if(fullscreenIndex === imagesWrapperArray.length - 1 && data === 'next'){
+        fullscreenIndex = -1;
+    }else if(fullscreenIndex === 0 && data === 'prev'){
+        fullscreenIndex = imagesWrapperArray.length ;
+    }
+    imagesWrapperArray[fullscreenIndex + flag].style.display = 'unset';
+    imagesWrapperArray[fullscreenIndex + flag].classList.add('fullscreen');
 }
